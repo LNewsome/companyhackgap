@@ -4,6 +4,7 @@ class CreateSurveys < ActiveRecord::Migration
       t.string :title
       t.test :description
       t.string :company
+      t.string :url
 
       t.timestamps null: false
     end
