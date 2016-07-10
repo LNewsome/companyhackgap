@@ -2,7 +2,7 @@ require 'test_helper'
 
 class USersControllerTest < ActionController::TestCase
   setup do
-    @u_ser = u_sers(:one)
+     @u_ser = u_sers(:one)
   end
 
   test "should get index" do
@@ -21,7 +21,7 @@ class USersControllerTest < ActionController::TestCase
       post :create, u_ser: { name: @u_ser.name, password: 'secret', password_confirmation: 'secret' }
     end
 
-    assert_redirected_to u_ser_path(assigns(:u_ser))
+    assert_redirected_to u_ser_url(assigns(:u_ser))
   end
 
   test "should show u_ser" do
@@ -36,7 +36,7 @@ class USersControllerTest < ActionController::TestCase
 
   test "should update u_ser" do
     patch :update, id: @u_ser, u_ser: { name: @u_ser.name, password: 'secret', password_confirmation: 'secret' }
-    assert_redirected_to u_ser_path(assigns(:u_ser))
+    assert_redirected_to u_ser_url(assigns(:u_ser))
   end
 
   test "should destroy u_ser" do
@@ -44,6 +44,6 @@ class USersControllerTest < ActionController::TestCase
       delete :destroy, id: @u_ser
     end
 
-    assert_redirected_to u_sers_path
+    assert_redirected_to u_sers_url
   end
 end
